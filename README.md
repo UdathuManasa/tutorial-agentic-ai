@@ -1,52 +1,50 @@
-Here is a clean, well-structured, production-ready `README.md` designed specifically for your **`tutorial-agentic-ai`** repository. It highlights core agentic AI concepts, RAG workflows, blood work report analysis with Streamlit, and clear instructions for setup and contribution.
-
----
-
 ```markdown
-# 🤖 Agentic AI & RAG Engineering Tutorial
+# 🤖 Agentic AI & Autonomous Systems Hands-On Tutorial
 
-Welcome to the **Agentic AI Tutorial** repository! This project serves as an end-to-end hands-on guide and reference codebase for building autonomous agentic systems, Retrieval-Augmented Generation (RAG) pipelines, and interactive AI application wrappers.
-
----
-
-## 📌 Features & Architecture
-
-* **Autonomous AI Agents**: ReAct and tool-calling pattern workflows using modern LLM frameworks.
-* **Retrieval-Augmented Generation (RAG)**:
-  * Vector embeddings and vector database collections (ChromaDB / LangChain).
-  * Document chunking, overlap parameter tuning, and similarity search queries.
-* **Blood Work Report Analysis Module**:
-  * Medical lab report parser and diagnostic reasoning notebook (`blood_work_analysis.ipynb`).
-  * Interactive Streamlit web interface wrapper for user friendly report uploads and interactive insights.
+Welcome to the **Agentic AI Tutorial** repository! This repository contains a structured, progressive collection of hands-on projects and core concept implementations in Agentic AI, Multimodal Systems, RAG, and Vector Databases.
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Structure & Modules
 
-```text
-tutorial-agentic-ai/
-├── blood_work_analysis.ipynb    # Diagnostic notebook for parsing & analyzing blood lab reports
-├── app.py                       # Streamlit UI interface wrapper
-├── src/                         # Core module logic, agents, and RAG pipelines
-│   ├── agents/                  # Custom agent implementations & tool definitions
-│   ├── rag/                     # Embedding generation, vector storage, and retriever setups
-│   └── utils/                   # Helper functions, prompts, and document loaders
-├── requirements.txt             # Project dependencies
-├── .env.example                 # Template for environment variables and API keys
-└── README.md                    # Project documentation
+Based on the core projects in this repository:
 
-```
+* **`health_analysis/`** 🩺
+  * Health analysis workflows and diagnostic reasoning pipelines (e.g., blood work report analysis and medical insights).
+* **`multimodel_agents/`** 👁️🤖
+  * Implementation of multimodal AI agents capable of processing multi-modal inputs (image, vision, and text).
+* **`project_shopping_agent/`** 🛒
+  * End-to-end autonomous Shopping Agent leveraging tool-calling patterns, product lookups, dynamic reasoning, and decision-making loops.
+* **`rag_basics/`** 📚
+  * Fundamental Retrieval-Augmented Generation (RAG) hands-on pipelines—covering document chunking, overlap parameter tuning, and context retrieval.
+* **`simple_llm_calling/`** ⚡
+  * Base LLM API integrations, prompt execution, and foundational model interactions.
+* **`single_agent/`** 🧠
+  * Single AI agent setup featuring in-memory state management, tool execution, and conversational memory.
+* **`vector_db/`** 🗄️
+  * Direct hands-on with Vector Databases (embeddings generation, vector search queries, and similarity indexing).
 
 ---
 
-## 🚀 Quick Start
+## 🛠 Project Management & Tech Stack
+
+This project is configured using modern Python package management with **uv** and standard configuration files:
+
+* **Package Manager**: [`uv`](https://github.com/astral-sh/uv) (configured via `pyproject.toml` and `uv.lock`)
+* **Language / Environment**: Python (`.python-version`)
+* **Key Frameworks**: LangChain / LlamaIndex / OpenAI / ChromaDB / Streamlit
+
+---
+
+## 🚀 Quick Start & Setup
 
 ### 1. Prerequisites
 
-Ensure you have **Python 3.10+** installed on your system.
+Make sure you have **Python 3.10+** and **`uv`** installed on your system.
 
 ```bash
-python --version
+# Install uv if you haven't already
+pip install uv
 
 ```
 
@@ -58,79 +56,85 @@ cd tutorial-agentic-ai
 
 ```
 
-### 3. Set Up a Virtual Environment
+### 3. Create & Sync Environment
+
+Using `uv`, you can set up the virtual environment and sync dependencies instantly:
 
 ```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate on macOS/Linux:
-source venv/bin/activate
-
-# Activate on Windows (PowerShell):
-.\venv\Scripts\Activate.ps1
+# Create virtual environment and install dependencies from uv.lock
+uv sync
 
 ```
 
-### 4. Install Dependencies
+Activate the virtual environment:
 
 ```bash
-pip install --upgrade pip
-pip install -r requirements.txt
+# On macOS/Linux:
+source .venv/bin/activate
+
+# On Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
 
 ```
 
-### 5. Configure Environment Variables
+### 4. Configure Environment Variables
 
-Create a `.env` file in the root directory by copying the template:
+Create a `.env` file in the root directory:
 
 ```bash
 cp .env.example .env
 
 ```
 
-Fill in your respective API keys:
+Set up your required API keys:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
-CHROMA_PERSIST_DIR=./data/chroma
 
 ```
 
 ---
 
-## 🧪 Usage
+## 🧪 Module Run Examples
 
-### Running Jupyter Notebooks
-
-To explore the step-by-step blood work analysis and RAG agent logic interactively:
-
+* **Shopping Agent**:
 ```bash
-jupyter lab
+python -m project_shopping_agent.main
 
 ```
 
-Open `blood_work_analysis.ipynb` in the Jupyter interface.
 
-### Running the Streamlit App
-
-To launch the interactive UI wrapper for blood report analysis:
-
+* **Multimodal Agents**:
 ```bash
-streamlit run app.py
+python -m multimodel_agents.main
 
 ```
 
-Navigate to `http://localhost:8501` in your browser.
+
+* **Health Analysis App (Streamlit)**:
+```bash
+streamlit run health_analysis/app.py
+
+```
+
+
 
 ---
 
-## 🛠 Tech Stack
+## 📄 License
 
-* **Language**: Python 3.10+
-* **LLM Orchestration**: LangChain / LlamaIndex / Custom Agent Loops
-* **Vector Store**: ChromaDB
-* **Web & UI Framework**: Streamlit
-* **Environment Management**: Python `venv` / dotenv
+Distributed under the MIT License.
 
+```
+
+---
+
+<FollowUp label="Would you like me to generate a tailored pyproject.toml / requirements list to keep with uv sync?" query="Can you generate a sample pyproject.toml suitable for this uv-managed Agentic AI repository?"/>
+
+<ElicitationsGroup message="What would you like to update next?">
+  <Elicitation label="Draft resume bullet points covering these 7 modules" query="Draft strong resume bullet points based on these specific repository modules: project_shopping_agent, health_analysis, multimodel_agents, and RAG/VectorDB."/>
+  <Elicitation label="Create a LinkedIn post highlighting this entire repository" query="Write a high-impact LinkedIn project showcase post for this Agentic AI repository."/>
+</ElicitationsGroup>
+
+```
