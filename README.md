@@ -4,7 +4,17 @@
 Welcome to the **Agentic AI Tutorial** repository! This repository contains a structured, progressive collection of hands-on projects and core concept implementations in Agentic AI, Multimodal Systems, RAG, and Vector Databases.
 
 ---
+## 🌟 Key Project: AI Shopping Assistant
 
+An end-to-end intelligent e-commerce assistant built with **Streamlit** and **LLM Agent Tooling**. 
+
+### Key Features:
+* 🖼️ **Shop by Image (Multimodal)**: Upload a product photo to automatically analyze visual features and retrieve matching items from the catalog[cite: 4].
+* 💬 **Natural Language Filtering**: Query products by complex constraints (e.g., *"Show me only with ratings 4+"* or *"I want to buy an oil under $20"*)[cite: 2, 9].
+* 🎯 **Structured Catalog Search**: Dynamically returns matching products with pricing, ratings, organic tags, and unique item IDs[cite: 2, 4, 9].
+* 📦 **Automated Order Confirmation**: Select items via conversation to instantly place an order with estimated delivery details[cite: 2, 6].
+
+---
 ## 📂 Repository Structure & Modules
 
 Based on the core projects in this repository:
@@ -100,7 +110,7 @@ ANTHROPIC_API_KEY=your_anthropic_api_key_here
 
 * **Shopping Agent**:
 ```bash
-python -m project_shopping_agent.main
+streamlit run project_shopping_agent/app.py
 
 ```
 
@@ -115,26 +125,5 @@ python -m multimodel_agents.main
 * **Health Analysis App (Streamlit)**:
 ```bash
 streamlit run health_analysis/app.py
-
-```
-
-
-
----
-
-## 📄 License
-
-Distributed under the MIT License.
-
-```
-
----
-
-<FollowUp label="Would you like me to generate a tailored pyproject.toml / requirements list to keep with uv sync?" query="Can you generate a sample pyproject.toml suitable for this uv-managed Agentic AI repository?"/>
-
-<ElicitationsGroup message="What would you like to update next?">
-  <Elicitation label="Draft resume bullet points covering these 7 modules" query="Draft strong resume bullet points based on these specific repository modules: project_shopping_agent, health_analysis, multimodel_agents, and RAG/VectorDB."/>
-  <Elicitation label="Create a LinkedIn post highlighting this entire repository" query="Write a high-impact LinkedIn project showcase post for this Agentic AI repository."/>
-</ElicitationsGroup>
 
 ```
